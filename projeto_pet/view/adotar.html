@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Adotar um pet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="adotar.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="favicon.png" alt="Logo" style="height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="pets.html">Pets</a></li>
+                <li class="nav-item"><a class="nav-link" href="adotar.html">Adotar</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero bg-light text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Como Adotar um Gatinho</h1>
+            <p class="lead">Adotar um amigo é um gesto de amor que transforma vidas.</p>
+            <a href="pets.html" class="btn btn-primary btn-lg">Veja os Gatinhos</a>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Passos para Adotar</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-search fa-3x text-primary"></i>
+                    <h4 class="mt-3">1. Escolha um Gatinho</h4>
+                    <p>Explore nossa lista de gatinhos disponíveis para adoção.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-envelope fa-3x text-primary"></i>
+                    <h4 class="mt-3">2. Entre em Contato</h4>
+                    <p>Preencha o formulário de interesse e aguarde nossa resposta.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-home fa-3x text-primary"></i>
+                    <h4 class="mt-3">3. Receba seu Amigo</h4>
+                    <p>Agende uma visita e leve seu novo amigo para casa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Por que Adotar?</h2>
+            <p class="text-center mb-5">Adotar salva vidas e dá uma segunda chance aos animais. Além disso, você ganha um amigo fiel para toda a vida!</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="nellyfrajola.jpg" alt="Gatinho" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h3>Vantagens da Adoção</h3>
+                    <ul>
+                        <li>Reduz a superpopulação de animais abandonados.</li>
+                        <li>Receba um animal já vacinado e castrado.</li>
+                        <li>Ajude a diminuir o comércio de exploração de animais.</li>
+                        <li>Pets adotados tendem a ser extremamente gratos e desenvolvem laços fortes com seus tutores.</li>
+                        <li> Acompanhar a transformação de um animal resgatado para um companheiro feliz é uma experiência profundamente recompensadora.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Perguntas Frequentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="card">
+                    <div class="card-header" id="faq1">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                Quais os requisitos para adoção?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapse1" class="collapse show" aria-labelledby="faq1" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            É necessário preencher um formulário e passar por uma entrevista para garantir que o ambiente seja seguro e amoroso para o gatinho.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="faq2">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Os gatos são vacinados e castrados?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="faq2" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Sim, todos os nossos gatos são vacinados, vermifugados e castrados antes da adoção.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Adote um Gatinho. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

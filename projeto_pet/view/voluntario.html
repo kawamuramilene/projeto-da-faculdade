@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="voluntarios.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Adote um Pet</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="adotar.html">Adotar</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Encontre seu pet</h1>
+            <p>Adotar é espalhar amor! Venha encontrar seu companheiro de quatro patas e mude a vida de um pet 
+               e a sua também. Aqui, o amor não se compra, se adota!</p>
+            <a href="adotar.html">
+                <button class="btn-adopt">Vamos Adotar</button>
+            </a>
+        </div>
+    </header>
+    <title>Formulário de Voluntário</title>
+
+
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 16px;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f4f4f9;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-edit {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+    
+    <body>
+        <div class="container">
+            <h1>Gerenciamento de Voluntários</h1>
+    
+            <form action="voluntario.php" method="POST">
+                <input type="hidden" name="acao" value="criar">
+                
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+    
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+    
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+    
+                <label for="disponibilidade">Disponibilidade (dias e horários):</label>
+                <textarea id="disponibilidade" name="disponibilidade" placeholder="Exemplo: Seg-Sex, 9h-12h" required></textarea>
+    
+                <input type="submit" value="Cadastrar Voluntário">
+            </form>
+        </div>
+    
+        <div class="container">
+            <h2>Lista de Voluntários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Disponibilidade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="voluntariosList"></tbody>
+            </table>
+        </div>
+    
+        <script>
+            // Função para carregar os voluntários na tabela
+            function carregarVoluntarios() {
+                fetch('voluntario.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.getElementById('voluntariosList');
+                        tableBody.innerHTML = ''; // Limpa a tabela
+                        data.forEach(voluntario => {
+                            const row = `<tr>
+                                <td>${voluntario.id}</td>
+                                <td>${voluntario.nome}</td>
+                                <td>${voluntario.email}</td>
+                                <td>${voluntario.telefone}</td>
+                                <td>${voluntario.disponibilidade}</td>
+                                <td>
+                                    <button class="btn-edit" onclick="editarVoluntario(${voluntario.id},
+                                 '${voluntario.nome}', '${voluntario.email}', '${voluntario.telefone}', '${voluntario.disponibilidade}')
+                                ">Editar</button>
+                                    <button class="btn-delete" onclick="deletarVoluntario(${voluntario.id})">Excluir</button>
+                                </td>
+                            </tr>`;
+                            tableBody.innerHTML += row;
+                        });
+                    });
+            }
+    
+            // Função para deletar voluntário
+            function deletarVoluntario(id) {
+                if (confirm('Tem certeza que deseja excluir este voluntário?')) {
+                    fetch('voluntario.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: `acao=deletar&id=${id}`
+                    }).then(response => response.text())
+                      .then(data => {
+                          alert(data);
+                          carregarVoluntarios();
+                      });
+                }
+            }
+
+            function editarVoluntario(id, nome, email, telefone, disponibilidade) {
+                const form = document.querySelector('form');
+                form.action = 'voluntario.php';
+                form.innerHTML = `
+                    <input type="hidden" name="acao" value="editar">
+                    <input type="hidden" name="id" value="${id}">
+                    
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" value="${nome}" required>
+    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" value="${email}" required>
+    
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" value="${telefone}" required>
+    
+                    <label for="disponibilidade">Disponibilidade (dias e horários):</label>
+                    <textarea id="disponibilidade" name="disponibilidade" required>${disponibilidade}</textarea>
+    
+                    <input type="submit" value="Atualizar Voluntário">
+                `;
+            }
+    
+            carregarVoluntarios();
+        </script>
+    </body>
+    </html>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="address">
+                <p><strong>Endereço</strong></p>
+                <p>Rua dos pets, São Paulo, 0500-100, Brasil</p>
+            </div>
+            <div class="contact">
+                <p><strong>Contato</strong></p>
+                <p>E-mail: adoteumpet@gmail.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Whatsapp: (11) 98745-6123</p>
+            </div>
+            <div class="supporters">
+                <p><strong>Apoiadores</strong></p>
+                <p>Milena e Milene</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Adote um Pet. Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

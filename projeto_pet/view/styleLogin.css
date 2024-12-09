@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, rgba(108, 108, 108, 0.615), rgba(13, 110, 0, 0.615));
+    text-align: center;
+  }
+
+.container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #b0b0b0b2;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-custom {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #218838;
+}
+
+.login-link {
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
+
+#direita{
+    position: absolute;
+    right: 16px;
+  }
+
+h1{
+    font-family: fantasy;
+    text-align: center;
+  }

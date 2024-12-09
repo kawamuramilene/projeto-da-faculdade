@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adote um Pet</title>
+    <link rel="stylesheet" href="contato.css">
+    <!-- Adicionando FontAwesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="adotar.html">Adotar</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Encontre seu pet</h1>
+            <p>Adotar é espalhar amor! Venha encontrar seu companheiro de quatro patas e mude a vida de um pet 
+               e a sua também. Aqui, o amor não se compra, se adota!</p>
+            <a href="adotar.html">
+                <button class="btn-adopt">Vamos Adotar</button>
+            </a>
+        </div>
+    </header>
+
+    <!-- Formulário de Contato -->
+    <section class="contato-section py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Fale Conosco</h1>
+            <form action="../controller/processar_contato.php" method="POST" class="form-contato">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Demais seções do site -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="address">
+                <p><strong>Endereço</strong></p>
+                <p>Rua dos pets, São Paulo, 0500-100, Brasil</p>
+            </div>
+            <div class="contact">
+                <p><strong>Contato</strong></p>
+                <p>E-mail: adoteumpet@gmail.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+                <p>Whatsapp: (11) 98745-6123</p>
+            </div>
+            <div class="supporters">
+                <p><strong>Apoiadores</strong></p>
+                <p>Milena e Milene</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Adote um Pet. Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

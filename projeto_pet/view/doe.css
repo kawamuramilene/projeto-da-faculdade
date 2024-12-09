@@ -1,0 +1,430 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+.header {
+    position: relative;
+    height: 450px;
+    background-image: url('gato.png');
+    background-size: cover;
+    background-position: center;
+    clip-path: ellipse(100% 70% at 50% 30%);
+    color: white;
+    padding: 20px; 
+    
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 400px;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    margin-left: -75px;
+    color: white;
+}
+
+.header-content p {
+    font-size: 1.2em;
+}
+
+.btn-adopt {
+    background-color: #f5c45a;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin: 60px 0; 
+}
+
+.button {
+    text-align: center;
+}
+
+.button img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.pets-section {
+    text-align: center;
+    padding: 60px; 
+}
+
+.pets-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.pet {
+    width: 230px;
+    text-align: center;
+}
+
+.pet img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.statistics {
+    background: linear-gradient(to bottom, #0eb13f, #21aa4f, #4dbd6f);
+    padding: 100px 20px; 
+    text-align: center;
+    clip-path: ellipse(100% 100% at 50% 0%); 
+    overflow: visible; 
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px; 
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+    width: 220px; 
+    margin-bottom: 30px; 
+}
+
+.stat img {
+    width: 150px;  
+    height: 150px; 
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px; 
+}
+
+.stat p { 
+    margin-top: 10px; 
+    font-size: 1em; 
+}
+
+
+@media (max-width: 768px) {
+    .statistics {
+        padding: 80px 10px; 
+    }
+    
+    .stat {
+        width: 180px; 
+    }
+    
+    .stat img {
+        width: 120px; 
+        height: 120px; 
+    }
+
+    .stat p {
+        font-size: 0.9em; 
+    }
+}
+
+/* Estilo básico do rodapé */
+.footer {
+    background-color: #f1f1f1;  /* Cor de fundo */
+    padding: 20px 0;             /* Espaçamento acima e abaixo */
+    text-align: center;          /* Centraliza o texto nas colunas */
+}
+
+/* Container que segura as 3 seções (endereço, contato, apoiadores) */
+.footer-content {
+    display: flex;               /* Usamos o Flexbox */
+    flex-direction: column;      /* Empilha as colunas em uma única coluna */
+    align-items: center;         /* Centraliza as colunas */
+    gap: 20px;                   /* Espaçamento entre as seções */
+}
+
+/* Estilo de cada seção dentro do rodapé */
+.footer-content div {
+    max-width: 500px;             /* Limita a largura para não ficar muito largo */
+    padding: 10px;
+}
+
+/* Estilo para o texto "Todos os direitos reservados" */
+.footer-bottom {
+    margin-top: 20px;  /* Espaçamento entre as seções e o texto de direitos reservados */
+    font-size: 14px;    /* Tamanho menor de fonte */
+    color: #777;        /* Cor mais suave */
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 15px;         /* Reduz o espaço entre as seções */
+    }
+    .footer-content div {
+        max-width: 100%;   /* As seções ocupam 100% da largura disponível */
+    }
+}
+
+/* Garantir que o formulário tenha uma largura maior e esteja centralizado */
+.form-contato {
+    max-width: 800px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centralizar o formulário horizontalmente */
+    padding: 20px; /* Adicionar algum espaço interno */
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espaço entre os campos do formulário */
+}
+
+.form-control {
+    width: 100%; /* Tornar os campos do formulário 100% da largura disponível */
+    padding: 10px; /* Padding interno nos campos */
+    border: 1px solid #ccc; /* Bordas finas */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho de fonte maior */
+}
+
+textarea.form-control {
+    resize: vertical; /* Permitir que a área de texto seja redimensionada verticalmente */
+}
+
+/* Estilo para o botão */
+.btn-primary {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 10px 20px; /* Padding do botão */
+    font-size: 16px; /* Tamanho de fonte maior */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s; /* Efeito de transição */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+}
+/* Centralizando o formulário e dando mais destaque */
+.form-contato {
+    max-width: 700px; /* Menor largura para evitar excesso */
+    margin: 0 auto; /* Centraliza o formulário */
+    padding: 30px; /* Aumentando o padding para espaçamento */
+    background-color: #fff; /* Cor de fundo do formulário */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Espacamento entre os campos */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos de campos de texto e textarea */
+.form-control {
+    padding: 12px 20px; /* Padding mais amplo */
+    font-size: 16px; /* Tamanho de fonte maior */
+    border: 1px solid #ddd; /* Borda suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: all 0.3s ease; /* Efeito de transição */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Cor de borda ao focar */
+    outline: none; /* Retira o contorno padrão */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Efeito de sombra ao focar */
+}
+
+/* Estilo do botão de envio */
+.btn-primary {
+    background-color: #007bff; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 15px 30px; /* Padding maior */
+    font-size: 18px; /* Tamanho maior */
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Efeito de transição suave */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+textarea.form-control {
+    resize: vertical; /* Permite redimensionamento vertical */
+    height: 150px; /* Tamanho fixo maior */
+}
+
+/* Adicionar ícones nos campos */
+.form-group label {
+    font-weight: bold; /* Deixar os labels em negrito */
+    margin-bottom: 8px;
+}
+
+.form-group i {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 12px;
+    color: #aaa; /* Cor suave dos ícones */
+}
+
+/* Estilos do título do formulário */
+h1.text-center {
+    font-size: 30px;
+    color: #333; /* Cor do título */
+    margin-bottom: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-contato {
+        width: 90%; /* Ocupa mais espaço em telas pequenas */
+        padding: 20px;
+    }
+
+    .btn-primary {
+        width: 100%; /* Faz o botão ocupar toda a largura */
+        padding: 14px 0;
+    }
+}
+/* Estilo do botão de envio */
+.btn-primary {
+    background-color: #28a745; /* Cor verde */
+    color: white; /* Cor do texto */
+    padding: 15px 30px; /* Padding maior */
+    font-size: 18px; /* Tamanho maior */
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Efeito de transição suave */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+}
+
+/* Estilo da seção 'Sobre Nós' */
+.sobre-nos {
+    background-color: #f8f9fa; /* Fundo claro para destacar a seção */
+    padding: 50px 0; /* Espaçamento vertical */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Centralizar o conteúdo do texto e título */
+.sobre-nos .container {
+    max-width: 900px; /* Definir largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 20px;
+}
+
+/* Estilo para os títulos */
+.sobre-nos h1, .sobre-nos h2, .sobre-nos h3 {
+    font-size: 2em; /* Tamanho de fonte maior */
+    color: #343a40; /* Cor do texto */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-weight: bold; /* Tornar os títulos mais fortes */
+}
+
+/* Estilo dos parágrafos */
+.sobre-nos p {
+    font-size: 1.1em; /* Tamanho da fonte maior para legibilidade */
+    line-height: 1.6; /* Aumentar o espaçamento entre linhas */
+    color: #555; /* Cor mais suave para o texto */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    max-width: 800px; /* Limitar a largura do texto para não ficar muito largo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adicionando um efeito de sombra suave ao contêiner */
+.sobre-nos .container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: #fff; /* Fundo branco para destacar */
+}
+
+/* Estilo do footer */
+footer.footer {
+    background-color: #343a40; /* Cor do fundo do rodapé */
+    color: white; /* Cor do texto no rodapé */
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Estilo das seções dentro do footer */
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .footer-content div {
+    margin: 10px;
+}
+
+footer .footer-content p {
+    font-size: 1em;
+    color: #ccc; /* Cor do texto */
+}
+ul {
+    list-style-type: none; /* Remove os pontos da lista */
+    padding: 0; /* Remove o preenchimento padrão */
+}
+
+ul li {
+    margin-bottom: 10px; /* Adiciona espaço entre as linhas */
+    font-size: 1.1em; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}

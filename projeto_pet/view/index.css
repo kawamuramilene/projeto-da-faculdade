@@ -1,0 +1,209 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.header {
+    position: relative;
+    height: 450px;
+    background-image: url('gato.png');
+    background-size: cover;
+    background-position: center;
+    clip-path: ellipse(100% 70% at 50% 30%);
+    color: white;
+    padding: 20px; 
+    
+}
+
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 400px;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+.header-content p {
+    font-size: 1.2em;
+}
+
+.btn-adopt {
+    background-color: #f5c45a;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin: 60px 0; 
+}
+
+.button {
+    text-align: center;
+}
+
+.button img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.pets-section {
+    text-align: center;
+    padding: 60px; 
+}
+
+.pets-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.pet {
+    width: 230px;
+    text-align: center;
+}
+
+.pet img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.statistics {
+    background: linear-gradient(to bottom, #0eb13f, #21aa4f, #4dbd6f);
+    padding: 100px 20px; 
+    text-align: center;
+    clip-path: ellipse(100% 100% at 50% 0%); 
+    overflow: visible; 
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px; 
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+    width: 220px; 
+    margin-bottom: 30px; 
+}
+
+.stat img {
+    width: 150px;  
+    height: 150px; 
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px; 
+}
+
+.stat p { 
+    margin-top: 10px; 
+    font-size: 1em; 
+}
+
+
+@media (max-width: 768px) {
+    .statistics {
+        padding: 80px 10px; 
+    }
+    
+    .stat {
+        width: 180px; 
+    }
+    
+    .stat img {
+        width: 120px; 
+        height: 120px; 
+    }
+
+    .stat p {
+        font-size: 0.9em; 
+    }
+}
+
+/* Estilo básico do rodapé */
+.footer {
+    background-color: #f1f1f1;  /* Cor de fundo */
+    padding: 20px 0;             /* Espaçamento acima e abaixo */
+    text-align: center;          /* Centraliza o texto nas colunas */
+}
+
+/* Container que segura as 3 seções (endereço, contato, apoiadores) */
+.footer-content {
+    display: flex;               /* Usamos o Flexbox */
+    flex-direction: column;      /* Empilha as colunas em uma única coluna */
+    align-items: center;         /* Centraliza as colunas */
+    gap: 20px;                   /* Espaçamento entre as seções */
+}
+
+/* Estilo de cada seção dentro do rodapé */
+.footer-content div {
+    max-width: 500px;             /* Limita a largura para não ficar muito largo */
+    padding: 10px;
+}
+
+/* Estilo para o texto "Todos os direitos reservados" */
+.footer-bottom {
+    margin-top: 20px;  /* Espaçamento entre as seções e o texto de direitos reservados */
+    font-size: 14px;    /* Tamanho menor de fonte */
+    color: #777;        /* Cor mais suave */
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 15px;         /* Reduz o espaço entre as seções */
+    }
+    .footer-content div {
+        max-width: 100%;   /* As seções ocupam 100% da largura disponível */
+    }
+}
